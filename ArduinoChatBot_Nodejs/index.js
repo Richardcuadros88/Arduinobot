@@ -19,5 +19,5 @@ bot.on('message', (msg) => {
     console.log("apagar led");
       bot.sendMessage(chatId, 'apagare el led ');
     }
-  //bot.sendMessage(chatId, 'Recibí tu mensaje ');
+  bot.sendMessage(chatId, 'Recibí tu mensaje ');
 });
