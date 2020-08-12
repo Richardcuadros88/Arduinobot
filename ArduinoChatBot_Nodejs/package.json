@@ -9,6 +9,7 @@
   "author": "Richardcuadros88",
   "license": "ISC",
   "dependencies": {
+    "serialport": "^9.0.1",
     "telegraf": "^3.38.0"
   }
 }
