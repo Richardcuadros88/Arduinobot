@@ -9,7 +9,7 @@ const bot = new TelegramBot(token, {
 var IdMiChat = 1189408516;
 
 var SerialPort = require('serialport');
-var MiPuerto = new SerialPort('COM4', {
+var MiPuerto = new SerialPort('COM3', {
   baudRate: 9600,
   autoOpen: true
 });
