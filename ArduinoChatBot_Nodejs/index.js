@@ -16,7 +16,7 @@ bot.on('message', (msg) => {
     console.log("encender el led")
       bot.sendMessage(chatId, 'encendere el led ');
     }
-    else if{Mensaje == "apagar"){
+    else if(Mensaje == "apagar"){
     console.log("apagar led");
       bot.sendMessage(chatId, 'apagare el led ');
     }
