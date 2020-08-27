@@ -1,5 +1,6 @@
 int Boton = 2;
 int Led = 9;
+boolean  encendido=0;
 
 void setup() {
   Serial.begin(9600);
@@ -9,8 +10,10 @@ void setup() {
 
 void loop() {
   if (digitalRead(Boton) == 0) {
+    encendido =!encendido;}
+    if (encendido == 1){
     Serial.println("H");
-    delay(500);
+    delay(1000);
   }
 
   if (Serial.available()) {

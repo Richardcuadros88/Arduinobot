@@ -9,6 +9,7 @@
   "author": "Richardcuadros88",
   "license": "ISC",
   "dependencies": {
+    "mqtt": "^4.2.0",
     "serialport": "^9.0.1",
     "telegraf": "^3.38.0"
   }
