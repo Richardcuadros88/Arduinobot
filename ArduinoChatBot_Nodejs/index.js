@@ -22,7 +22,7 @@ bot.on('message', (msg) => {
      bot.sendMessage(chatId, 'Encendere el led');
     client.publish('/fH/foco/casa', '1')
     //MiPuerto.write("H");
-  } else if (Mensaje.indexOf("apagar") >= 0)) {
+  } else if (Mensaje.indexOf("apagar") >= 0) {
     console.log("Apagar el led");
     bot.sendMessage(chatId, 'Apagare el led');
     client.publish('/fH/foco/casa', '0')
