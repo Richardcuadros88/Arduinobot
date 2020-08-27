@@ -20,12 +20,13 @@ bot.on('message', (msg) => {
   if (Mensaje.indexOf("encender") >= 0) {
     console.log("encendiendo el led");
      bot.sendMessage(chatId, 'Encendere el led');
-    client.publish('/fH/foco/casa', '0')
+    client.publish('/fH/foco/casa', '1')
     //MiPuerto.write("H");
   } else if (Mensaje == "Apagar") {
     console.log("Apagar el led");
     bot.sendMessage(chatId, 'Apagare el led');
-    MiPuerto.write("L");
+    client.publish('/fH/foco/casa', '0')
+    //MiPuerto.write("L");
   }
   bot.sendMessage(chatId, 'Recibí tu mensaje');
 
