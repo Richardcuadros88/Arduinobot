@@ -17,7 +17,7 @@ bot.on('message', (msg) => {
   const chatId = msg.chat.id;
   console.log("El ID del char" + chatId);
   var Mensaje = msg.text.toString().toLocaleLowerCase();
-  if (Mensaje.indexOf("encender") >= 1) {
+  if (Mensaje.indexOf("encender") >= 0) {
     console.log("encendiendo el led");
      bot.sendMessage(chatId, 'Encendere el led');
     client.publish('/fH/foco/casa', '1')
