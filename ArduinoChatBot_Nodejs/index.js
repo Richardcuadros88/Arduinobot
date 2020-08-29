@@ -17,16 +17,29 @@ bot.on('message', (msg) => {
   const chatId = msg.chat.id;
   console.log("El ID del char" + chatId);
   var Mensaje = msg.text.toString().toLocaleLowerCase();
+
   if (Mensaje.indexOf("encender") >= 0) {
     console.log("encendiendo el led");
      bot.sendMessage(chatId, 'Encendere el led');
     client.publish('/fH/foco/casa', '1')
     //MiPuerto.write("H");
-  } else if (Mensaje.indexOf("apagar") >= 0) {
+  }
+  else if (Mensaje.indexOf("apagar") >= 0) {
     console.log("Apagar el led");
     bot.sendMessage(chatId, 'Apagare el led');
     client.publish('/fH/foco/casa', '0')
     //MiPuerto.write("L");
+  if (Mensaje.indexOf("encender1") >= 0) {
+      console.log("encendiendo el led1");
+       bot.sendMessage(chatId, 'Encendere el led');
+      client.publish('/fH/foco/casa2', '1')
+      //MiPuerto.write("H");
+  } else if (Mensaje.indexOf("apagar1") >= 0) {
+      console.log("Apagar el led");
+      bot.sendMessage(chatId, 'Apagare el led1');
+      client.publish('/fH/foco/casa', '0')
+
+
   }
   bot.sendMessage(chatId, 'Recibí tu mensaje');
 
