@@ -84,8 +84,6 @@ void setup() {
 
   client.begin("broker.shiftr.io", net);
   client.onMessage(RecibirMensaje);
-
-client.begin("broker.shiftr.io", net);
   client.onMessage(RecibirMensaje2);
   connect();
 }
