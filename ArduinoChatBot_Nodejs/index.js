@@ -14,7 +14,7 @@ var IdMiChat = 1189408516;
 var client = mqtt.connect('mqtt://housefox:123andres@broker.shiftr.io')
 
 bot.on('message', (msg) =>
-{
+({
   const chatId = msg.chat.id;
   console.log("El ID del char" + chatId);
   var Mensaje = msg.text.toString().toLocaleLowerCase();
@@ -49,7 +49,7 @@ bot.on('message', (msg) =>
   }
   bot.sendMessage(chatId, 'Recibí tu mensaje');
 
-};
+});
 
 //MiPuerto.setEncoding('utf8');
 
