@@ -34,19 +34,19 @@ bot.on('message', (msg) =>
     //MiPuerto.write("L");
 
 }
-const chatId = msg.chat.id;
-console.log("El ID del char" + chatId);
+const chatId2 = msg.chat.id;
+console.log("El ID del char" + chatId2);
 var Mensaje = msg.text.toString().toLocaleLowerCase();
   if (Mensaje.indexOf("sala") >= 0)
   {
       console.log("encendiendo la sala");
-       bot.sendMessage(chatId, 'Encendere la sala');
+       bot.sendMessage(chatId2, 'Encendere la sala');
       client.publish('/fH/foco2/casa2', '1')
       //MiPuerto.write("H");
   } else if (Mensaje.indexOf("apagar sala") >= 0)
   {
       console.log("Apagar la sala");
-      bot.sendMessage(chatId, 'Apagarela sala');
+      bot.sendMessage(chatId2, 'Apagarela sala');
       client.publish('/fH/foco2/casa2', '0')
 
 
