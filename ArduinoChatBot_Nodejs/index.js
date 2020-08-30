@@ -13,29 +13,34 @@ var IdMiChat = 1189408516;
   //autoOpen: true
 var client = mqtt.connect('mqtt://housefox:123andres@broker.shiftr.io')
 
-bot.on('message', (msg) => {
+bot.on('message', (msg) =>
+{
   const chatId = msg.chat.id;
   console.log("El ID del char" + chatId);
   var Mensaje = msg.text.toString().toLocaleLowerCase();
 
-  if (Mensaje.indexOf("encender") >= 0) {
+  if (Mensaje.indexOf("encender") >= 0)
+  {
     console.log("encendiendo el led");
      bot.sendMessage(chatId, 'Encendere el led');
     client.publish('/fH/foco/casa', '1')
     //MiPuerto.write("H");
-  } else if (Mensaje.indexOf("apagar") >= 0) {
+  } else if (Mensaje.indexOf("apagar") >= 0)
+  {
     console.log("Apagar el led");
     bot.sendMessage(chatId, 'Apagare el led');
     client.publish('/fH/foco/casa', '0')
     //MiPuerto.write("L");
 
-
-  if (Mensaje.indexOf("encender1") >= 0) {
+}
+  if (Mensaje.indexOf("encender1") >= 0)
+  {
       console.log("encendiendo el led1");
        bot.sendMessage(chatId, 'Encendere el led');
       client.publish('/fH/foco/casa2', '1')
       //MiPuerto.write("H");
-  } else if (Mensaje.indexOf("apagar1") >= 0) {
+  } else if (Mensaje.indexOf("apagar1") >= 0)
+  {
       console.log("Apagar el led");
       bot.sendMessage(chatId, 'Apagare el led1');
       client.publish('/fH/foco/casa', '0')
@@ -44,7 +49,7 @@ bot.on('message', (msg) => {
   }
   bot.sendMessage(chatId, 'Recibí tu mensaje');
 
-});
+};
 
 //MiPuerto.setEncoding('utf8');
 
