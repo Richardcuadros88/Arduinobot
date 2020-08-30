@@ -55,9 +55,10 @@ void RecibirMensaje(String &topic, String &payload) {
     Serial.println("Foco Desactivado");
    }}
   
- void RecibirMensaje2(String &topic, String &payload) {
- Serial.println("Mensaje: " + topic + " - " + payload);
-  if (payload == "1") {
+ void RecibirMensaje2(String &topic, String &payload2) {
+ Serial.println("Mensaje: " + topic + " - " + payload2);
+ 
+  if (payload2 == "1") {
     digitalWrite(foco2, 1);
     Serial.println("foco2 activado");
   }
