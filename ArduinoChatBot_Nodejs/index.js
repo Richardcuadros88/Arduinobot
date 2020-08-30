@@ -23,12 +23,13 @@ bot.on('message', (msg) => {
      bot.sendMessage(chatId, 'Encendere el led');
     client.publish('/fH/foco/casa', '1')
     //MiPuerto.write("H");
-  }
-  else if (Mensaje.indexOf("apagar") >= 0) {
+  } else if (Mensaje.indexOf("apagar") >= 0) {
     console.log("Apagar el led");
     bot.sendMessage(chatId, 'Apagare el led');
     client.publish('/fH/foco/casa', '0')
     //MiPuerto.write("L");
+
+
   if (Mensaje.indexOf("encender1") >= 0) {
       console.log("encendiendo el led1");
        bot.sendMessage(chatId, 'Encendere el led');
@@ -43,7 +44,7 @@ bot.on('message', (msg) => {
   }
   bot.sendMessage(chatId, 'Recibí tu mensaje');
 
-}};
+});
 
 //MiPuerto.setEncoding('utf8');
 
