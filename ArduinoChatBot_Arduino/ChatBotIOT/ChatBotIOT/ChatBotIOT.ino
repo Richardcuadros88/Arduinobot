@@ -20,8 +20,8 @@ const char pass1[] = "nuevo1234567891234";
 WiFiClient net;
 MQTTClient client;
 
-int foco2 = 3;
-int Foco = 2;
+int sala = 3;
+int habitacion = 2;
 unsigned long lastMillis = 0;
 
 void connect() {
@@ -38,7 +38,7 @@ void connect() {
   }
   Serial.println("\nConectado :D !");
 
-  client.subscribe("/fH/foco/casa-casa2");
+  client.subscribe("/fH/foco/casa");
   client.subscribe("/fH/foco2/casa2");
 
 }
@@ -47,23 +47,23 @@ void RecibirMensaje(String &topic, String &payload) {
 
   
   if (payload == "1") {
-    digitalWrite(Foco, 1);
+    digitalWrite(habitacion, 1);
     Serial.println("Foco activado");
   }
   else {
-    digitalWrite(Foco, 0);
+    digitalWrite(habitacion, 0);
     Serial.println("Foco Desactivado");
    }}
   
- void RecibirMensaje2(String &topic, String &payload2) {
- Serial.println("Mensaje: " + topic + " - " + payload2);
+ void RecibirMensaje2(String &topic2, String &payload2) {
+ Serial.println("Mensaje: " + topic2 + " - " + payload2);
  
   if (payload2 == "1") {
-    digitalWrite(foco2, 1);
+    digitalWrite(sala, 1);
     Serial.println("foco2 activado");
   }
   else {
-    digitalWrite(foco2, 0);
+    digitalWrite(sala, 0);
     Serial.println("foco2 Desactivado");
 
   }
@@ -71,10 +71,10 @@ void RecibirMensaje(String &topic, String &payload) {
 
 void setup() {
   Serial.begin(115200);
-  pinMode(foco2, OUTPUT);
-  pinMode(Foco, OUTPUT);
-  digitalWrite(foco2, 0);
-  digitalWrite(Foco, 0);
+  pinMode(sala, OUTPUT);
+  pinMode(habitacion, OUTPUT);
+  digitalWrite(sala, 0);
+  digitalWrite(habitacion, 0);
 
   Serial.println("Iniciando Wifi");
   WiFi.mode(WIFI_STA);//Cambiar modo del Wi-Fi
