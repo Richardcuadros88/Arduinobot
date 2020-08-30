@@ -38,13 +38,13 @@ void connect() {
   }
   Serial.println("\nConectado :D !");
 
-  client.subscribe("/fH/foco/casa");
-  client.subscribe("/fH/foco2/casa");
+  client.subscribe("/fH/foco/casa-casa2");
+  client.subscribe("/fH/foco2/casa2");
 
 }
-
 void RecibirMensaje(String &topic, String &payload) {
   Serial.println("Mensaje: " + topic + " - " + payload);
+
   
   if (payload == "1") {
     digitalWrite(Foco, 1);
@@ -53,9 +53,9 @@ void RecibirMensaje(String &topic, String &payload) {
   else {
     digitalWrite(Foco, 0);
     Serial.println("Foco Desactivado");
-   }
+   }}
   
- 
+ void RecibirMensaje2(String &topic, String &payload) {
  Serial.println("Mensaje: " + topic + " - " + payload);
   if (payload == "1") {
     digitalWrite(foco2, 1);
@@ -85,6 +85,8 @@ void setup() {
   client.begin("broker.shiftr.io", net);
   client.onMessage(RecibirMensaje);
 
+client.begin("broker.shiftr.io", net);
+  client.onMessage(RecibirMensaje2);
   connect();
 }
 

@@ -38,13 +38,13 @@ bot.on('message', (msg) =>
   {
       console.log("encendiendo el led1");
        bot.sendMessage(chatId, 'Encendere el led1');
-      client.publish('/fH/foco2/casa', '1')
+      client.publish('/fH/foco2/casa2', '1')
       //MiPuerto.write("H");
   } else if (Mensaje.indexOf("apagar1") >= 0)
   {
       console.log("Apagar el led1");
       bot.sendMessage(chatId, 'Apagare el led1');
-      client.publish('/fH/foco2/casa', '0')
+      client.publish('/fH/foco2/casa2', '0')
 
 
   }
