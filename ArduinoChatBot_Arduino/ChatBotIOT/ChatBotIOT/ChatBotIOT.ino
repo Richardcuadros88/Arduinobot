@@ -20,37 +20,32 @@ const char pass1[] = "nuevo1234567891234";
 WiFiClient net;
 MQTTClient client;
 
-int Led = 3;
+int foco2 = 3;
 int Foco = 2;
-
 unsigned long lastMillis = 0;
 
 void connect() {
   Serial.print("Conectando con Wifi...");
   while (wifiMulti.run() != WL_CONNECTED) {
-    digitalWrite(Led, 0);
-    delay(100);
-    digitalWrite(Led, 1);
-    delay(100);
     Serial.print(".");
+    delay(100);
   }
 
   Serial.print("\nConectando con MQTT...");
   while (!client.connect("fox_house", "housefox", "123andres")) {
-    digitalWrite(Led, 0);
-    delay(1000);
-    digitalWrite(Led, 1);
-    delay(1000);
     Serial.print("*");
+    delay(100);
   }
-
   Serial.println("\nConectado :D !");
 
   client.subscribe("/fH/foco/casa");
+  client.subscribe("/fH/foco2/casa");
+
 }
 
 void RecibirMensaje(String &topic, String &payload) {
   Serial.println("Mensaje: " + topic + " - " + payload);
+  
   if (payload == "1") {
     digitalWrite(Foco, 1);
     Serial.println("Foco activado");
@@ -58,14 +53,26 @@ void RecibirMensaje(String &topic, String &payload) {
   else {
     digitalWrite(Foco, 0);
     Serial.println("Foco Desactivado");
+   }
+  
+ 
+ Serial.println("Mensaje: " + topic + " - " + payload);
+  if (payload == "1") {
+    digitalWrite(foco2, 1);
+    Serial.println("foco2 activado");
   }
-}
+  else {
+    digitalWrite(foco2, 0);
+    Serial.println("foco2 Desactivado");
+
+  }
+ }
 
 void setup() {
   Serial.begin(115200);
-  pinMode(Led, OUTPUT);
+  pinMode(foco2, OUTPUT);
   pinMode(Foco, OUTPUT);
-  digitalWrite(Led, 0);
+  digitalWrite(foco2, 0);
   digitalWrite(Foco, 0);
 
   Serial.println("Iniciando Wifi");
