@@ -34,21 +34,21 @@ bot.on('message', (msg) =>
     client.publish('/fH/habitacion/casa', '0')
   }
 
-  const chatId2 = msg.chat.id;
-  console.log("El ID del char" + chatId2);
+  const chatId = msg.chat.id;
+  console.log("El ID del char" + chatId);
   var Mensaje = msg.text.toString().toLocaleLowerCase();
 
   if (Mensaje.indexOf("sala") >= 0)
 
   {
     console.log("encendiendo la sala");
-     bot.sendMessage(chatId2, 'Encendere la sala');
+     bot.sendMessage(chatId, 'Encendere la sala');
     client.publish('/fs/sala/casa', '1')
 
   } else if (Mensaje.indexOf("off") >= 0)
   {
     console.log("Apagar la sala");
-    bot.sendMessage(chatId2, 'Apagare la sala');
+    bot.sendMessage(chatId, 'Apagare la sala');
     client.publish('/fs/sala/casa', '0')
 }
 {
