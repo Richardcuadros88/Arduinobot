@@ -24,9 +24,9 @@ bot.on('message', (msg) =>
   {
     console.log("encendiendo la habitacion");
      bot.sendMessage(chatId, 'Encendere la habitacion');
-    client.publish('/fH/habitacion/casa', '0')
+    client.publish('/fH/habitacion/casa', '1')
 
-  } else if (Mensaje.indexOf("apagar habitacion") >= 0)
+  } else if (Mensaje.indexOf("Apagar") >= 0)
   {
     console.log("Apagar la habitacion");
     bot.sendMessage(chatId, 'Apagare la habitacion');
