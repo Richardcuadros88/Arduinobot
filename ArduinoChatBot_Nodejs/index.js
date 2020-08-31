@@ -45,7 +45,7 @@ bot.on('message', (msg) =>
      bot.sendMessage(chatId2, 'Encendere la sala');
     client.publish('/fH/sala/casa', '1')
 
-  } else if (Mensaje.indexOf("apagar1") >= 0)
+  } else if (Mensaje.indexOf("off") >= 0)
   {
     console.log("Apagar la sala");
     bot.sendMessage(chatId2, 'Apagare la sala');
