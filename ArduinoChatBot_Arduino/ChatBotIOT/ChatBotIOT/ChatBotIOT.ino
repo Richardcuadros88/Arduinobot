@@ -22,7 +22,7 @@ MQTTClient client;
 
 int sala = 3;
 int habitacion = 2;
-unsigned long lastMillis = 0;
+
 
 void connect() {
   Serial.print("Conectando con Wifi...");
@@ -38,8 +38,8 @@ void connect() {
   }
   Serial.println("\nConectado :D !");
 
-  client.subscribe("/fH/foco/casa");
-  client.subscribe("/fH/foco2/casa2");
+  client.subscribe("/fH/habitacion/casa");
+  client.subscribe("/fH/sala/casa2");
 
 }
 void RecibirMensaje(String &topic, String &payload) {
@@ -49,14 +49,14 @@ void RecibirMensaje(String &topic, String &payload) {
   if (payload == "1") {
     digitalWrite(habitacion, 1);
     digitalWrite(sala, 1);
-    Serial.println("luz habitacion activada");
-     Serial.println("foco2 activado"); 
+    Serial.println("luz  activada");
+      
   }
-  else {
+  else if (payload == "0"){
     digitalWrite(habitacion, 0);
     digitalWrite(sala, 0);
-    Serial.println("luz de habitacion Desactivada");
-     Serial.println("foco2 Desactivado");
+    Serial.println("luz  Desactivada");
+     
      }
   
   
