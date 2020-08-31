@@ -44,7 +44,8 @@ void connect() {
   client.subscribe("/fH/sala/casa");
 }
 
-void RecibirMensaje(String &topic, String &payload) {
+void RecibirMensaje(String &topic, String &payload) 
+{
   Serial.println("Mensaje: " + topic + " - " + payload);
   if (payload == "1") {
     digitalWrite(Foco, 1);
@@ -55,9 +56,10 @@ void RecibirMensaje(String &topic, String &payload) {
     Serial.println("iluminacion Desactivada");
   }}
 
-  void RecibirMensaje2(String &topic, String &payload) {
-  Serial.println("Mensaje: " + topic + " - " + payload);
-  if (payload == "1") {
+  void RecibirMensaje2(String &topic, String &payload2) 
+  {
+  Serial.println("Mensaje: " + topic + " - " + payload2);
+  if (payload2 == "1") {
     digitalWrite(Led, 1);
     Serial.println("iluminacion Activada");
   }

@@ -50,7 +50,8 @@ bot.on('message', (msg) =>
     console.log("Apagar la sala");
     bot.sendMessage(chatId2, 'Apagare la sala');
     client.publish('/fH/sala/casa', '0')
-
+}
+{
   bot.sendMessage(chatId2, 'Recibí tu mensaje');
 }
 });
