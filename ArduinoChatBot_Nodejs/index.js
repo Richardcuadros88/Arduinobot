@@ -52,7 +52,7 @@ bot.on('message', (msg) =>
     client.publish('/fH/habitacion/casa', '0')
 
   bot.sendMessage(chatId2, 'Recibí tu mensaje');
-
+}
 });
 
 //MiPuerto.setEncoding('utf8');
