@@ -43,13 +43,13 @@ bot.on('message', (msg) =>
   {
     console.log("encendiendo la sala");
      bot.sendMessage(chatId2, 'Encendere la sala');
-    client.publish('/fH/sala/casa', '1')
+    client.publish('/fs/sala/casa', '1')
 
   } else if (Mensaje.indexOf("off") >= 0)
   {
     console.log("Apagar la sala");
     bot.sendMessage(chatId2, 'Apagare la sala');
-    client.publish('/fH/sala/casa', '0')
+    client.publish('/fs/sala/casa', '0')
 }
 {
   bot.sendMessage(chatId2, 'Recibí tu mensaje');
