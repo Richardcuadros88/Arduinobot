@@ -47,10 +47,12 @@ void RecibirMensaje(String &topic, String &payload) {
   Serial.println("Mensaje: " + topic + " - " + payload);
   if (payload == "1") {
     digitalWrite(Foco, 1);
+    digitalWrite(Led, 1);
     Serial.println("iluminacion Activada");
   }
   else {
     digitalWrite(Foco, 0);
+    digitalWrite(Led, 0);
     Serial.println("iluminacion Desactivada");
   }
 }

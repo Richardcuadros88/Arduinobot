@@ -21,6 +21,7 @@ bot.on('message', (msg) =>
   var Mensaje = msg.text.toString().toLocaleLowerCase();
 
   if (Mensaje.indexOf("habitacion") >= 0)
+
   {
     console.log("encendiendo la habitacion");
      bot.sendMessage(chatId, 'Encendere la habitacion');
@@ -31,10 +32,26 @@ bot.on('message', (msg) =>
     console.log("Apagar la habitacion");
     bot.sendMessage(chatId, 'Apagare la habitacion');
     client.publish('/fH/habitacion/casa', '0')
-
-
   }
-  bot.sendMessage(chatId, 'Recibí tu mensaje');
+
+  const chatId = msg.chat.id;
+  console.log("El ID del char" + chatId2);
+  var Mensaje = msg.text.toString().toLocaleLowerCase();
+
+  if (Mensaje.indexOf("sala") >= 0)
+
+  {
+    console.log("encendiendo la sala");
+     bot.sendMessage(chatId2, 'Encendere la sala');
+    client.publish('/fH/habitacion/casa', '1')
+
+  } else if (Mensaje.indexOf("apagar1") >= 0)
+  {
+    console.log("Apagar la sala");
+    bot.sendMessage(chatId2, 'Apagare la sala');
+    client.publish('/fH/habitacion/casa', '0')
+
+  bot.sendMessage(chatId2, 'Recibí tu mensaje');
 
 });
 
