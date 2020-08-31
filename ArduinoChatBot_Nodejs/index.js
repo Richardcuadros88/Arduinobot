@@ -34,7 +34,7 @@ bot.on('message', (msg) =>
     client.publish('/fH/habitacion/casa', '0')
   }
 
-  const chatId = msg.chat.id;
+  const chatId2 = msg.chat.id;
   console.log("El ID del char" + chatId2);
   var Mensaje = msg.text.toString().toLocaleLowerCase();
 
