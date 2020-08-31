@@ -48,14 +48,17 @@ void RecibirMensaje(String &topic, String &payload) {
   
   if (payload == "1") {
     digitalWrite(habitacion, 1);
-    Serial.println("Foco activado");
+    Serial.println("luz habitacion activada");
   }
   else {
     digitalWrite(habitacion, 0);
-    Serial.println("Foco Desactivado");
-   }
+    Serial.println("luz de habitacion Desactivada");
+   }}
   
-  if (payload == "1") {
+ void RecibirMensaje2(String &topic2, String &payload2) {
+ Serial.println("Mensaje2: " + topic2 + " - " + payload2);
+ 
+  if (payload2 == "1") {
     digitalWrite(sala, 1);
     Serial.println("foco2 activado");
   }
@@ -82,7 +85,7 @@ void setup() {
 
   client.begin("broker.shiftr.io", net);
   client.onMessage(RecibirMensaje);
-//  client.onMessage(RecibirMensaje2);
+  client.onMessage(RecibirMensaje2);
   connect();
 }
 
