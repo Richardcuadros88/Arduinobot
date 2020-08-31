@@ -34,7 +34,7 @@ bot.on('message', (msg) =>
     client.publish('/fH/habitacion/casa', '0')
   }
 
-  
+
 
   if (Mensaje.indexOf("sala") >= 0)
 
@@ -50,7 +50,7 @@ bot.on('message', (msg) =>
     client.publish('/fs/sala/casa', '0')
 }
 {
-  bot.sendMessage(chatId2, 'Recibí tu mensaje');
+  bot.sendMessage(chatId, 'Recibí tu mensaje');
 }
 });
 
