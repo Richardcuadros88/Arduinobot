@@ -33,9 +33,9 @@ bot.on('message', (msg) =>
     bot.sendMessage(chatId, 'Apagare la habitacion');
     client.publish('/fH/habitacion/casa', '0')
   }
-})
+}
 
-bot.on('message', (msg) =>
+
   {
   const chatId = msg.chat.id;
   console.log("El ID del char" + chatId);

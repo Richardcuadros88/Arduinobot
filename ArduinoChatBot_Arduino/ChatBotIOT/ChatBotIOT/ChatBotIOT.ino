@@ -45,6 +45,7 @@ void connect() {
 }
 
 void RecibirMensaje(String &topic, String &payload) 
+
 {
   Serial.println("Mensaje: " + topic + " - " + payload);
   if (payload == "1") {
@@ -58,10 +59,12 @@ void RecibirMensaje(String &topic, String &payload)
     Serial.println("iluminacion Desactivada");
   }}
 
+void loop()
+
   void RecibirMensaje2(String &topic, String &payload) 
  {
  Serial.println("Mensaje: " + topic + " - " + payload);
- if (payload == "1") {
+ if (payload == "0") {
     digitalWrite(Led, 1);
     Serial.println("iluminacion Activada2");
   }
