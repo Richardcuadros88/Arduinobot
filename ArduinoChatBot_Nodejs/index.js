@@ -32,9 +32,13 @@ bot.on('message', (msg) =>
     console.log("Apagar la habitacion");
     bot.sendMessage(chatId, 'Apagare la habitacion');
     client.publish('/fH/habitacion/casa', '0')
-  }
+  }}
 
-
+bot.on('message', (msg) =>
+  {
+  const chatId = msg.chat.id;
+  console.log("El ID del char" + chatId);
+  var Mensaje = msg.text.toString().toLocaleLowerCase();
 
   if (Mensaje.indexOf("sala") >= 0)
 
