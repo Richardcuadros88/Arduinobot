@@ -35,10 +35,6 @@ bot.on('message', (msg) =>
   }
 
 
-  const chatId = msg.chat.id;
-  console.log("El ID del char" + chatId);
-  var Mensaje = msg.text.toString().toLocaleLowerCase();
-
   if (Mensaje.indexOf("sala") >= 0)
 
   {
