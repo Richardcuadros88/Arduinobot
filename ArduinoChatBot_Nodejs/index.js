@@ -32,7 +32,8 @@ bot.on('message', (msg) =>
     console.log("Apagar la habitacion");
     bot.sendMessage(chatId, 'Apagare la habitacion');
     client.publish('/fH/habitacion/casa', '0')
-  }}
+  }
+})
 
 bot.on('message', (msg) =>
   {
