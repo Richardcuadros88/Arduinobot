@@ -59,12 +59,10 @@ void RecibirMensaje(String &topic, String &payload)
     Serial.println("iluminacion Desactivada");
   }}
 
-void loop()
-
-  void RecibirMensaje2(String &topic, String &payload) 
+  void RecibirMensaje2(String &topic, String &payload2) 
  {
- Serial.println("Mensaje: " + topic + " - " + payload);
- if (payload == "0") {
+ Serial.println("Mensaje: " + topic + " - " + payload2);
+ if (payload2 == "0") {
     digitalWrite(Led, 1);
     Serial.println("iluminacion Activada2");
   }
