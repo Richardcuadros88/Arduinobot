@@ -40,12 +40,15 @@ void connect() {
 
   Serial.println("\nConectado :D !");
 
- Foco = client.subscribe("/fH/habitacion/casa");
+ //Foco = client.subscribe("/fH/habitacion/casa");
  Led =  client.subscribe("/fs/sala/casa");
+
 }
+ /*
 void RecibirMensaje(String &topic, String &payload) 
 
 {
+ 
   Serial.println("Mensaje: " + topic + " - " + payload);
   
   if (payload == "1") {
@@ -61,7 +64,7 @@ void RecibirMensaje(String &topic, String &payload)
     Serial.println("iluminacion Desactivada");
   }}
 
-
+*/
 
   void RecibirMensaje2(String &topic, String &payload2) 
  {
@@ -91,7 +94,7 @@ void setup() {
  // wifiMulti.addAP(ssid3, pass3);
 
   client.begin("broker.shiftr.io", net);
-  client.onMessage(RecibirMensaje);
+//  client.onMessage(RecibirMensaje);
   client.onMessage(RecibirMensaje2);
 
   connect();
