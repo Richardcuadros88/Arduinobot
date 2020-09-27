@@ -10,7 +10,7 @@ ESP8266WiFiMulti wifiMulti;
 
 #include <MQTT.h>
 
-const char ssid1[] = "foxx-house";0
+const char ssid1[] = "foxx-house";
 const char pass1[] = "nuevo1234567891234";
 
 WiFiClient net;
