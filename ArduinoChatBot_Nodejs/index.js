@@ -35,7 +35,7 @@ bot.on('message', (msg) =>
   }
 
 
-};
+});
 {
   bot.sendMessage(chatId, 'Recibí tu mensaje');
 }
