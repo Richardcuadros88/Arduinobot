@@ -34,8 +34,6 @@ bot.on('message', (msg) =>
     client.publish('/dll/Foco/casa', '0')
   }
 
-
-})
 {
   bot.sendMessage(chatId, 'Recibí tu mensaje');
 }
