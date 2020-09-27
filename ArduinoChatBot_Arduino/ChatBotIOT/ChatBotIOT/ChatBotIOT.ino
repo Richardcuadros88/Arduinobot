@@ -29,12 +29,12 @@ void connect() {
 
   {
     Serial.print("\nConectando con MQTT...");
-    while (!client.connect("dell_house", "housefox", "123andres")) {
+    while (!client.connect("fox_house", "housefox", "123andres")) {
       delay(1000);
       Serial.print("*");
     }
     Serial.println("\nConectado :D !");
-    client.subscribe("/dll/Foco/casa");
+    client.subscribe("/fx/Foco/casa");
 
   }
 }
@@ -52,8 +52,13 @@ void RecibirMensaje(String &topic, String &payload) {
     Serial.println(" Desactivada");
   }
 }
-void setup() {
+
+  void setup() {
   Serial.begin(115200);
+ // pinMode(Led, OUTPUT);
+  pinMode(Foco, OUTPUT);
+ // digitalWrite(Led, 0);
+  digitalWrite(Foco, 0);
 
   Serial.println("Iniciando Wifi");
   WiFi.mode(WIFI_STA);//Cambiar modo del Wi-Fi
